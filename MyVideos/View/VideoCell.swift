@@ -18,6 +18,7 @@ class VideoCell: UITableViewCell {
     func updateUI() {
 
         // TODO 3 : set thumbnailImageView.image to video.thumbnailFileName
+//        UIImage(named: "video.thumbnailFileName")
         // TODO 4 : set usernameLabel.text to video.authorName
         
     }

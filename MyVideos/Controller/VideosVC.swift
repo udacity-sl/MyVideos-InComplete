@@ -3,7 +3,7 @@
 //
 
 // Storyboard Check List
-// 1 : Set the TED image in the First
+// 1 : Set the TED image in the FirstVC
 // 2 : Pressing "Let's GO" Buttom should show VideosVC
 // 3 : Design the TableViewCell
 // 4 : Set Initial View Controller

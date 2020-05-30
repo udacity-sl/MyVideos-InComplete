@@ -9,7 +9,7 @@ class VideoCell: UITableViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    
+    @IBOutlet weak var watchedImage: UIImageView!
     
     var video: Video! {
         didSet {
@@ -21,6 +21,7 @@ class VideoCell: UITableViewCell {
 
         thumbnailImageView.image = UIImage(named: video.thumbnailFileName)
         usernameLabel.text = video.authorName
+        watchedImage.isHidden = !video.isWatched
         
     }
     
@@ -28,6 +29,8 @@ class VideoCell: UITableViewCell {
         super.awakeFromNib()
         
         // TODO 5 : Change the corner of the thumbnailImageView to be rounded
+        thumbnailImageView.layer.cornerRadius = 8
+        thumbnailImageView.clipsToBounds = true
         
     }
 }

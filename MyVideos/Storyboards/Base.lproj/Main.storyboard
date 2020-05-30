@@ -33,6 +33,11 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzv-qC-Sg5">
                                                     <rect key="frame" x="20" y="11" width="335" height="228"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="VQH-lT-cKP">
                                                     <rect key="frame" x="31.000000000000007" y="198" width="84.666666666666686" height="30"/>
@@ -52,14 +57,24 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-tick" translatesAutoresizingMaskIntoConstraints="NO" id="KOg-h1-TTY">
+                                                    <rect key="frame" x="147.66666666666666" y="85" width="80" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="fKD-Le-aYD"/>
+                                                        <constraint firstAttribute="width" constant="80" id="wKm-WK-Ct4"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.11748389150000001" green="0.1213654056" blue="0.13381612300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="KOg-h1-TTY" firstAttribute="centerY" secondItem="p0N-Km-cS5" secondAttribute="centerY" id="Crp-1a-Nu6"/>
                                                 <constraint firstItem="nzv-qC-Sg5" firstAttribute="top" secondItem="p0N-Km-cS5" secondAttribute="topMargin" id="IaJ-Hf-1mV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="nzv-qC-Sg5" secondAttribute="trailing" id="Pzs-Xz-2l1"/>
                                                 <constraint firstItem="nzv-qC-Sg5" firstAttribute="leading" secondItem="p0N-Km-cS5" secondAttribute="leadingMargin" id="QHW-sj-GDq"/>
                                                 <constraint firstAttribute="bottom" secondItem="VQH-lT-cKP" secondAttribute="bottom" constant="22" id="SLq-rM-e2e"/>
                                                 <constraint firstItem="VQH-lT-cKP" firstAttribute="leading" secondItem="p0N-Km-cS5" secondAttribute="leading" constant="31.000000000000007" id="Zeo-d2-q0G"/>
+                                                <constraint firstItem="KOg-h1-TTY" firstAttribute="centerX" secondItem="p0N-Km-cS5" secondAttribute="centerX" id="dic-0R-e4V"/>
                                                 <constraint firstItem="nzv-qC-Sg5" firstAttribute="bottom" secondItem="p0N-Km-cS5" secondAttribute="bottomMargin" id="kP8-Fe-SO6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -67,6 +82,7 @@
                                         <connections>
                                             <outlet property="thumbnailImageView" destination="nzv-qC-Sg5" id="iaE-xS-zzp"/>
                                             <outlet property="usernameLabel" destination="crP-dD-8Yl" id="iwH-mn-uvb"/>
+                                            <outlet property="watchedImage" destination="KOg-h1-TTY" id="Q3P-Gi-Kbf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,5 +182,6 @@
     <resources>
         <image name="TED_three_letter_logo.svg" width="600" height="220.5"/>
         <image name="btn-play" width="373" height="373"/>
+        <image name="green-tick" width="840" height="906"/>
     </resources>
 </document>

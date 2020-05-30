@@ -40,10 +40,6 @@ extension VideosVC: UITableViewDataSource {
 }
 
 
-
-
-
-
 /*
 
     Optional
@@ -53,8 +49,18 @@ extension VideosVC: UITableViewDataSource {
 
 // TODO 7 : Implement UITableViewDelegate
 
-extension VideosVC {
+extension VideosVC: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(videos[indexPath.row].authorName)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? VideoCell else { fatalError() }
+        
+        
+        videos[indexPath.row].isWatched = true
+        cell.video = videos[indexPath.row]
+        
+    }
     // TODO 8 : In didSelectRowAt
     //          Get the video in indexPath.row
     //          Print the auther name

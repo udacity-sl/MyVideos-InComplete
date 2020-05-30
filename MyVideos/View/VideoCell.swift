@@ -7,19 +7,20 @@ import UIKit
 
 class VideoCell: UITableViewCell {
     
-    // TODO 1 : Connect thumbnailImageView & usernameLabel IBOutlets from StoryBoard
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     
     var video: Video! {
         didSet {
-            // TODO 2 : Call updateUI() function
+            updateUI()
         }
     }
     
     func updateUI() {
 
-        // TODO 3 : set thumbnailImageView.image to video.thumbnailFileName
-//        UIImage(named: "video.thumbnailFileName")
-        // TODO 4 : set usernameLabel.text to video.authorName
+        thumbnailImageView.image = UIImage(named: video.thumbnailFileName)
+        usernameLabel.text = video.authorName
         
     }
     
@@ -27,6 +28,6 @@ class VideoCell: UITableViewCell {
         super.awakeFromNib()
         
         // TODO 5 : Change the corner of the thumbnailImageView to be rounded
-
+        
     }
 }
